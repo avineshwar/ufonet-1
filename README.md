@@ -28,6 +28,7 @@ copier/coller dans un terminal :
 
     ./ufonet --check-tor --proxy="http://127.0.0.1:8118"
 
-<br/>**LICENSE**
+
+**LICENSE**
 
 [![GPLv3+](http://gplv3.fsf.org/gplv3-127x51.png)](https://github.com/oda-alexandre/ufonet/blob/master/LICENSE)
