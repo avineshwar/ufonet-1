@@ -4,7 +4,7 @@ MAINTAINER https://oda-alexandre.github.io
 
 RUN apt-get update
 
-RUN apt-get install --no-install-recommends -y sudo tor privoxy git python ca-certificates python-pycurl python-geoip python-whois python-crypto python-requests dnsutils
+RUN apt-get install --no-install-recommends -y sudo tor privoxy git python ca-certificates python-pycurl python-geoip python-whois python-crypto python-requests python-scapy dnsutils
 
 RUN useradd -d /home/ufonet -m ufonet
 RUN passwd -d ufonet
