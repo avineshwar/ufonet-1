@@ -21,13 +21,13 @@ dnsutils
 
 RUN useradd -d /home/ufonet -m ufonet && \
 passwd -d ufonet && \
-adduser ufonet
+adduser ufonet sudo
 
 USER ufonet
 
-RUN git clone https://github.com/epsylon/ufonet.git /home/ufonet/ufonet/
+WORKDIR /home/ufonet
 
-WORKDIR /home/ufonet/ufonet/
+RUN git clone https://github.com/epsylon/ufonet.git
 
 RUN sudo rm -f /etc/privoxy/config && \
 sudo rm -f /etc/tor/torcc && \
@@ -39,5 +39,7 @@ echo "SOCKSPort localhost:9050" | sudo tee -a /etc/tor/torcc
 
 RUN sudo apt-get --purge autoremove -y \
 git
+
+WORKDIR /home/ufonet/ufonet/
 
 CMD sudo service tor start && sudo service privoxy start && ./ufonet --gui
