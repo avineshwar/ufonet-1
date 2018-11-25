@@ -1,6 +1,6 @@
 # UFONET
 
-![ufonet](https://raw.githubusercontent.com/oda-alexandre/ufonet/master/logo-ufonet.png) ![docker](https://raw.githubusercontent.com/oda-alexandre/ufonet/master/logo-docker.png)
+![ufonet](https://raw.githubusercontent.com/oda-alexandre/ufonet/master/img/logo-ufonet.png) ![docker](https://raw.githubusercontent.com/oda-alexandre/ufonet/master/img/logo-docker.png)
 
 
 ## INDEX
