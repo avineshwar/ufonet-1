@@ -43,8 +43,6 @@ Pour vérifier que Ufonet utilise le réseau tor
 
 ```
 docker exec -ti ufonet /bin/bash
-```
-```
 ./ufonet --check-tor --proxy="http://127.0.0.1:8118"
 ```
 
