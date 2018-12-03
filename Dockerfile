@@ -37,8 +37,11 @@ echo "forward-socks4 / localhost:9050 ." | sudo tee -a /etc/privoxy/config && \
 echo "forward-socks4a / localhost:9050 ." | sudo tee -a /etc/privoxy/config && \
 echo "SOCKSPort localhost:9050" | sudo tee -a /etc/tor/torcc
 
-RUN sudo apt-get --purge autoremove -y \
-git
+RUN sudo apt-get --purge autoremove -y && \
+sudo apt-get autoclean -y && \
+sudo rm /etc/apt/sources.list && \
+sudo rm -rf /var/cache/apt/archives/* && \
+sudo rm -rf /var/lib/apt/lists/*
 
 WORKDIR /home/ufonet/ufonet/
 
