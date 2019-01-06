@@ -31,7 +31,7 @@ Installer [Docker](https://www.docker.com)
 ## INSTALLATION
 
 ```
-docker run -d --name ufonet -p 9999:9999 -e DISPLAY alexandreoda/ufonet
+docker run -d --name ufonet -p 9999:9999 alexandreoda/ufonet
 ```
 
 lien vers Ufonet http://0.0.0.0:9999
