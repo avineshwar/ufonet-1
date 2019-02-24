@@ -20,12 +20,12 @@
 
 ## INTRODUCTION
 
-Ce repository contient le fichier Dockerfile de [Ufonet](https://ufonet.03c8.net/) pour [Docker](https://www.docker.com), mis à jour automatiquement dans le [Docker Hub](https://hub.docker.com/r/alexandreoda/ufonet/) public.
+Ce repository contient le fichier Dockerfile de [Ufonet](https://ufonet.03c8.net/) pour [docker](https://www.docker.com), mis à jour automatiquement dans le [docker hub](https://hub.docker.com/r/alexandreoda/ufonet/) public.
 
 
 ## PREREQUIS
 
-Installer [Docker](https://www.docker.com)
+Installer [docker](https://www.docker.com)
 
 
 ## INSTALLATION
