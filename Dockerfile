@@ -1,6 +1,10 @@
 FROM debian:stretch-slim
 
-MAINTAINER https://oda-alexandre.github.io
+MAINTAINER https://oda-alexandre.com
+
+# VARIABLES
+ENV USER ufonet
+ENV DEBIAN_FRONTEND noninteractive
 
 # INSTALLATION DES PREREQUIS
 RUN apt-get update && \
@@ -17,18 +21,18 @@ python-whois \
 python-crypto \
 python-requests \
 python-scapy \
-dnsutils
+dnsutils && \
 
 # AJOUT UTILISATEUR
-RUN useradd -d /home/ufonet -m ufonet && \
-passwd -d ufonet && \
-adduser ufonet sudo
+useradd -d /home/${USER} -m ${USER} && \
+passwd -d ${USER} && \
+adduser ${USER} sudo
 
 # SELECTION UTILISATEUR
-USER ufonet
+USER ${USER}
 
 # SELECTION ESPACE DE TRAVAIL
-WORKDIR /home/ufonet
+WORKDIR /home/${USER}
 
 # INSTALLATION DE L'APPLICATION
 RUN git clone https://github.com/epsylon/ufonet.git
@@ -51,8 +55,16 @@ sudo rm /etc/apt/sources.list && \
 sudo rm -rf /var/cache/apt/archives/* && \
 sudo rm -rf /var/lib/apt/lists/*
 
+# AJOUT UTILISATEUR
+useradd -d /home/${USER} -m ${USER} && \
+passwd -d ${USER} && \
+adduser ${USER} sudo
+
+# SELECTION UTILISATEUR
+USER ${USER}
+
 # SELECTION ESPACE DE TRAVAIL
-WORKDIR /home/ufonet/ufonet/
+WORKDIR /home/${USER}/ufonet/
 
 # COMMANDE AU DEMARRAGE DU CONTENEUR
 CMD sudo service tor start && sudo service privoxy start && ./ufonet --gui

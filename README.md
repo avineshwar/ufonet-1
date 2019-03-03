@@ -1,11 +1,11 @@
 # UFONET
 
-![ufonet](https://raw.githubusercontent.com/oda-alexandre/ufonet/master/img/logo-ufonet.png) ![docker](https://raw.githubusercontent.com/oda-alexandre/ufonet/master/img/logo-docker.png)
+[![dockeri.co](https://dockeri.co/image/alexandreoda/ufonet)](https://hub.docker.com/r/alexandreoda/ufonet)
 
 
 ## INDEX
 
-- [Build Docker](#BUILD)
+- [Badges](#BADGES)
 - [Introduction](#INTRODUCTION)
 - [Prerequis](#PREREQUIS)
 - [Installation](#INSTALLATION)
@@ -13,14 +13,21 @@
 - [License](#LICENSE)
 
 
-## BUILD DOCKER
+## BADGES
 
-[![ufonet docker build](https://img.shields.io/docker/build/alexandreoda/ufonet.svg)](https://hub.docker.com/r/alexandreoda/ufonet)
+[![version](https://images.microbadger.com/badges/version/alexandreoda/ufonet.svg)](https://microbadger.com/images/alexandreoda/ufonet)
+[![size](https://images.microbadger.com/badges/image/alexandreoda/ufonet.svg)](https://microbadger.com/images/alexandreoda/ufonet")
+[![build](https://img.shields.io/docker/build/alexandreoda/ufonet.svg)](https://hub.docker.com/r/alexandreoda/ufonet)
+[![automated](https://img.shields.io/docker/automated/alexandreoda/ufonet.svg)](https://hub.docker.com/r/alexandreoda/ufonet)
 
 
 ## INTRODUCTION
 
-Ce repository contient le fichier Dockerfile de [Ufonet](https://ufonet.03c8.net/) pour [docker](https://www.docker.com), mis à jour automatiquement dans le [docker hub](https://hub.docker.com/r/alexandreoda/ufonet/) public.
+Ce repository contient le fichier Dockerfile de
+
+- [ufonet](https://ufonet.03c8.net/)
+
+Mis à jour automatiquement dans le [docker hub public](https://hub.docker.com/r/alexandreoda/ufonet/)
 
 
 ## PREREQUIS
@@ -43,6 +50,8 @@ Pour vérifier que Ufonet utilise le réseau tor
 
 ```
 docker exec -ti ufonet /bin/bash
+```
+```
 ./ufonet --check-tor --proxy="http://127.0.0.1:8118"
 ```
 
