@@ -52,7 +52,7 @@ git && \
 sudo apt-get autoclean -y && \
 sudo rm /etc/apt/sources.list && \
 sudo rm -rf /var/cache/apt/archives/* && \
-sudo rm -rf /var/lib/apt/lists/*
+sudo rm -rf /var/lib/apt/lists/* && \
 
 # AJOUT UTILISATEUR
 useradd -d /home/${USER} -m ${USER} && \
