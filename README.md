@@ -46,7 +46,7 @@ lien vers Ufonet http://0.0.0.0:9999
 
 ## CONFIGURATION
 
-Pour vérifier que Ufonet utilise le réseau tor
+Pour vérifier que ufonet utilise le réseau tor
 
 ```
 docker exec -ti ufonet /bin/bash
