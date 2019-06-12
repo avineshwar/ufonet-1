@@ -1,6 +1,6 @@
 # UFONET
 
-[![dockeri.co](https://dockeri.co/image/alexandreoda/ufonet)](https://hub.docker.com/r/alexandreoda/ufonet)
+<img src="https://ufonet.03c8.net/ufonet/ufonet-logo.png" />
 
 
 ## INDEX
@@ -38,22 +38,10 @@ Installer [docker](https://www.docker.com)
 ## INSTALLATION
 
 ```
-docker run -d --name ufonet -p 9999:9999 alexandreoda/ufonet
+docker run -d --name ufonet -v ${HOME}:/home/ufonet -p 9999:9999 alexandreoda/ufonet
 ```
 
 lien vers Ufonet http://0.0.0.0:9999
-
-
-## CONFIGURATION
-
-Pour vérifier que ufonet utilise le réseau tor
-
-```
-docker exec -ti ufonet /bin/bash
-```
-```
-./ufonet --check-tor --proxy="http://127.0.0.1:8118"
-```
 
 
 ## LICENSE
