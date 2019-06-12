@@ -58,4 +58,4 @@ sudo rm -rf /var/lib/apt/lists/*
 WORKDIR /home/${USER}/ufonet/
 
 # COMMANDE AU DEMARRAGE DU CONTENEUR
-CMD sudo service tor start && sudo service privoxy start && ./ufonet --check-tor
+CMD sudo service tor start && sudo service privoxy start && ./ufonet --check-tor && ./ufonet --gui
