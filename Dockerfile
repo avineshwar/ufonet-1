@@ -4,6 +4,7 @@ MAINTAINER https://www.oda-alexandre.com/
 
 # VARIABLES
 ENV USER ufonet
+ENV APP https://github.com/epsylon/ufonet.git
 ENV DEBIAN_FRONTEND noninteractive
 
 # INSTALLATION DES PREREQUIS
@@ -34,7 +35,7 @@ USER ${USER}
 WORKDIR /home/${USER}
 
 # INSTALLATION DE L'APPLICATION
-RUN git clone https://github.com/epsylon/ufonet.git && \
+RUN git clone ${APP} && \
 
 # CONFIGURATION TOR & PRIVOXY
 sudo rm -f /etc/privoxy/config && \
@@ -47,23 +48,14 @@ echo "SOCKSPort localhost:9050" | sudo tee -a /etc/tor/torcc && \
 
 # NETTOYAGE
 sudo apt-get --purge autoremove -y \
-wget \
 git && \
 sudo apt-get autoclean -y && \
 sudo rm /etc/apt/sources.list && \
 sudo rm -rf /var/cache/apt/archives/* && \
-sudo rm -rf /var/lib/apt/lists/* && \
-
-# AJOUT UTILISATEUR
-useradd -d /home/${USER} -m ${USER} && \
-passwd -d ${USER} && \
-adduser ${USER} sudo
-
-# SELECTION UTILISATEUR
-USER ${USER}
+sudo rm -rf /var/lib/apt/lists/*
 
 # SELECTION ESPACE DE TRAVAIL
 WORKDIR /home/${USER}/ufonet/
 
 # COMMANDE AU DEMARRAGE DU CONTENEUR
-CMD sudo service tor start && sudo service privoxy start && ./ufonet --gui
+CMD sudo service tor start && sudo service privoxy start && ./ufonet --check-tor
