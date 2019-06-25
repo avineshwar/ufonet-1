@@ -15,10 +15,7 @@
 
 ## BADGES
 
-[![version](https://images.microbadger.com/badges/version/alexandreoda/ufonet.svg)](https://microbadger.com/images/alexandreoda/ufonet)
-[![size](https://images.microbadger.com/badges/image/alexandreoda/ufonet.svg)](https://microbadger.com/images/alexandreoda/ufonet")
-[![build](https://img.shields.io/docker/build/alexandreoda/ufonet.svg)](https://hub.docker.com/r/alexandreoda/ufonet)
-[![automated](https://img.shields.io/docker/automated/alexandreoda/ufonet.svg)](https://hub.docker.com/r/alexandreoda/ufonet)
+[![pipeline status](https://gitlab.com/oda-alexandre/ufonet/badges/master/pipeline.svg)](https://gitlab.com/oda-alexandre/ufonet/commits/master)
 
 
 ## INTRODUCTION
