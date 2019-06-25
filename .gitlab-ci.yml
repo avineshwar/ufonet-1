@@ -96,6 +96,6 @@ test:
   allow_failure: false
   script:
     - docker pull $CI_REGISTRY_IMAGE
-    - docker run --rm $CI_REGISTRY_IMAGE sudo service tor start && sudo service privoxy start && ./ufonet --check-tor --proxy="http://127.0.0.1:8118" && ./ufonet --download-zombies --force-yes
+    - docker run --rm $CI_REGISTRY_IMAGE /bin/bash sudo service tor start && sudo service privoxy start && ./ufonet --check-tor --proxy="http://127.0.0.1:8118" && ./ufonet --download-zombies --force-yes
   only:
     - master
