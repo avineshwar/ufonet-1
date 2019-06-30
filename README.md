@@ -1,6 +1,6 @@
 # UFONET
 
-<img src="https://ufonet.03c8.net/ufonet/ufonet-logo.png" />
+<img src="https://ufonet.03c8.net/ufonet/ufonet-logo.png" width="200" height="200"/>
 
 
 ## INDEX
