@@ -4,12 +4,13 @@
 
 ## INDEX
 
-- [Badges](#BADGES)
-- [Introduction](#INTRODUCTION)
-- [Prerequisites](#PREREQUISITESITES)
-- [Install](#INSTALL)
-- [Configuration](#CONFIG)
-- [License](#LICENSE)
+- [UFONET](#ufonet)
+  - [INDEX](#index)
+  - [BADGES](#badges)
+  - [INTRODUCTION](#introduction)
+  - [PREREQUISITES](#prerequisites)
+  - [INSTALL](#install)
+  - [LICENSE](#license)
 
 ## BADGES
 
@@ -35,7 +36,7 @@ Use [docker](https://www.docker.com)
 
 ## INSTALL
 
-```docker run -d --name ufonet -v ${HOME}:/home/ufonet -p 9999:9999 alexandreoda/ufonet```
+```docker run -ti --rm --name ufonet -v ${HOME}:/home/ufonet -p 9999:9999 alexandreoda/ufonet```
 
 link to Ufonet <http://0.0.0.0:9999>
 
