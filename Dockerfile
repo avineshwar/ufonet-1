@@ -3,12 +3,15 @@ FROM debian:stretch-slim
 LABEL authors https://www.oda-alexandre.com/
 
 ENV USER ufonet
+ENV HOME /home/${USER}
+ENV LOCALES fr_FR.UTF-8
 ENV APP https://github.com/epsylon/ufonet.git
 ENV DEBIAN_FRONTEND noninteractive
 
 RUN echo -e '\033[36;1m ******* INSTALL PACKAGES ******** \033[0m'; \
-  apt update && apt install --no-install-recommends -y \
+  apt-get update && apt-get install --no-install-recommends -y \
   sudo \
+  locales \
   tor \
   privoxy \
   git \
@@ -22,8 +25,11 @@ RUN echo -e '\033[36;1m ******* INSTALL PACKAGES ******** \033[0m'; \
   python-scapy \
   dnsutils
 
+RUN echo -e '\033[36;1m ******* CHANGE LOCALES ******** \033[0m'; \
+  locale-gen ${LOCALES}
+  
 RUN echo -e '\033[36;1m ******* ADD USER ******** \033[0m'; \
-  useradd -d /home/${USER} -m ${USER}; \
+  useradd -d ${HOME} -m ${USER}; \
   passwd -d ${USER}; \
   adduser ${USER} sudo
 
@@ -31,7 +37,7 @@ RUN echo -e '\033[36;1m ******* SELECT USER ******** \033[0m'
 USER ${USER}
 
 RUN echo -e '\033[36;1m ******* SELECT WORKING SPACE ******** \033[0m'
-WORKDIR /home/${USER}
+WORKDIR ${HOME}
 
 RUN echo -e '\033[36;1m ******* INSTALL APP ******** \033[0m'; \
   git clone ${APP}
@@ -54,7 +60,7 @@ RUN echo -e '\033[36;1m ******* CLEANING ******** \033[0m'; \
   sudo rm -rf /var/lib/apt/lists/*
 
 RUN echo -e '\033[36;1m ******* SELECT WORKING SPACE ******** \033[0m'
-WORKDIR /home/${USER}/ufonet/
+WORKDIR ${HOME}/ufonet/
 
 RUN echo -e '\033[36;1m ******* CONTAINER START COMMAND ******** \033[0m'
 CMD sudo service tor start && sudo service privoxy start && ./ufonet --check-tor --proxy="http://127.0.0.1:8118" && ./ufonet --download-zombies --force-yes && ./ufonet --gui \
