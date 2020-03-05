@@ -10,6 +10,8 @@
   - [INTRODUCTION](#introduction)
   - [PREREQUISITES](#prerequisites)
   - [INSTALL](#install)
+    - [DOCKER RUN](#docker-run)
+    - [DOCKER COMPOSE](#docker-compose)
   - [LICENSE](#license)
 
 ## BADGES
@@ -24,7 +26,7 @@ Docker image of :
 
 Continuous integration on :
 
-- [gitlab](https://gitlab.com/oda-alexandre/ufonet/pipelines)
+- [gitlab pipelines](https://gitlab.com/oda-alexandre/ufonet/pipelines)
 
 Automatically updated on :
 
@@ -36,9 +38,32 @@ Use [docker](https://www.docker.com)
 
 ## INSTALL
 
-```docker run -ti --rm --name ufonet -v ${HOME}:/home/ufonet -p 9999:9999 alexandreoda/ufonet```
+### DOCKER RUN
 
-link to Ufonet <http://0.0.0.0:9999>
+```\
+docker run -ti --rm --name ufonet -v ${HOME}:/home/ufonet -p 9999:9999 alexandreoda/ufonet
+```
+
+> link to Ufonet <http://0.0.0.0:9999>
+
+### DOCKER COMPOSE
+
+```yml
+version: "3.7"
+
+services:
+  ufonet:
+    container_name: ufonet
+    image: alexandreoda/ufonet
+    restart: "no"
+    privileged: false
+    environment:
+      - DISPLAY
+    volumes:
+      - "${HOME}:/home/ufonet"
+    ports:
+      - "9999"
+```
 
 ## LICENSE
 
