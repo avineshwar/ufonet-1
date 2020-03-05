@@ -1,0 +1,14 @@
+version: "3.7"
+
+services:
+  ufonet:
+    container_name: ufonet
+    image: alexandreoda/ufonet
+    restart: "no"
+    privileged: false
+    environment:
+      - DISPLAY
+    volumes:
+      - "${HOME}:/home/ufonet"
+    ports:
+      - "9999"
